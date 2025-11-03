@@ -80,3 +80,59 @@ export async function sendEmail(payloadData) {
         }
     }
 }
+
+/**
+ * Send email verification email
+ * 
+ * @param {Object} user - User object
+ * @param {string} user.email - User email
+ * @param {string} user.name - User name
+ * @param {string} verificationToken - Verification token
+ * @param {string} verificationEmailHtml - HTML content for verification email
+ */
+export async function sendVerificationEmail(user, verificationToken, verificationEmailHtml) {
+    const appBaseUrl = process.env.APP_BASE_URL || 'http://localhost:3000';
+    const verificationLink = `${appBaseUrl}/api/auth/verify-email?token=${verificationToken}`;
+
+    return sendEmail({
+        to: {
+            email: user.email,
+            name: user.name || user.email,
+        },
+        subject: 'Verify Your Email Address',
+        html: verificationEmailHtml,
+        dynamicData: {
+            name: user.name || user.email,
+            verificationLink,
+            token: verificationToken,
+        },
+    });
+}
+
+/**
+ * Send password reset email
+ * 
+ * @param {Object} user - User object
+ * @param {string} user.email - User email
+ * @param {string} user.name - User name
+ * @param {string} resetToken - Password reset token
+ * @param {string} resetEmailHtml - HTML content for password reset email
+ */
+export async function sendPasswordResetEmail(user, resetToken, resetEmailHtml) {
+    const appBaseUrl = process.env.APP_BASE_URL || 'http://localhost:3000';
+    const resetLink = `${appBaseUrl}/reset-password?token=${resetToken}`;
+
+    return sendEmail({
+        to: {
+            email: user.email,
+            name: user.name || user.email,
+        },
+        subject: 'Reset Your Password',
+        html: resetEmailHtml,
+        dynamicData: {
+            name: user.name || user.email,
+            resetLink,
+            token: resetToken,
+        },
+    });
+}
