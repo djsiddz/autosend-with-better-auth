@@ -1,5 +1,5 @@
 {
-    "name": "asend-with-better-auth",
+    "name": "autosend-with-better-auth",
     "version": "1.0.0",
     "description": "Sample backend showcasing AutoSend email integration with Better Auth",
     "type": "module",

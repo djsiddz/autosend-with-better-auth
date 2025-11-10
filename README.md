@@ -12,7 +12,9 @@ This project showcases three key email triggers using AutoSend:
 
 ---
 
-## READ THE ARTICLE (COMING SOON)
+## READ THE ARTICLE
+
+For a detailed walkthrough of this integration, check out [this article](https://supersiddy.wordpress.com/2025/11/05/the-ultimate-guide-to-transactional-emails-with-autosend-and-better-auth/). 👈
 
 ---
 
