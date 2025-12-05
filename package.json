@@ -20,10 +20,10 @@
     "author": "Siddhesh Thadeshwar <siddhesht@outlook.in>",
     "license": "MIT",
     "dependencies": {
-        "better-auth": "^1.3.34",
-        "better-sqlite3": "^12.4.1",
+        "better-auth": "^1.4.5",
+        "better-sqlite3": "^12.5.0",
         "cors": "^2.8.5",
         "dotenv": "^17.2.3",
-        "express": "^5.1.0"
+        "express": "^5.2.1"
     }
 }
